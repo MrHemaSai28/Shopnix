@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop Onboarding Wizard</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="wizard-container">
@@ -36,6 +33,7 @@
                 </div>
             </div>
         </div>
+
         <div class="wizard-main">
             <div class="wizard-content">
                 <!-- Step 1: Theme Selection -->
@@ -44,8 +42,9 @@
                         <h1>Choose Your Theme</h1>
                         <p>Select a theme that best represents your brand identity</p>
                     </div>
+
                     <div class="theme-grid">
-                        <div class="theme-card modern" data-theme="modern">
+                        <div class="theme-card" data-theme="modern">
                             <div class="theme-preview modern">
                                 <div class="theme-elements">
                                     <div class="theme-header"></div>
@@ -61,7 +60,8 @@
                                 <p>Clean, minimalist design with contemporary elements and subtle gradients</p>
                             </div>
                         </div>
-                        <div class="theme-card classic" data-theme="classic">
+
+                        <div class="theme-card" data-theme="classic">
                             <div class="theme-preview classic">
                                 <div class="theme-elements">
                                     <div class="theme-header"></div>
@@ -77,7 +77,8 @@
                                 <p>Traditional and elegant design with timeless appeal and refined aesthetics</p>
                             </div>
                         </div>
-                        <div class="theme-card vibrant" data-theme="vibrant">
+
+                        <div class="theme-card" data-theme="vibrant">
                             <div class="theme-preview vibrant">
                                 <div class="theme-elements">
                                     <div class="theme-header"></div>
@@ -94,6 +95,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="wizard-navigation">
                         <div></div>
                         <button class="btn btn-primary" id="nextBtn1" disabled>
@@ -101,27 +103,31 @@
                         </button>
                     </div>
                 </div>
+
                 <!-- Step 2: Category Setup -->
                 <div class="step-content" data-step="2">
                     <div class="content-header">
                         <h1>Let's add a type, Category and Sub-category</h1>
                         <p>Define your product structure for better organization</p>
                     </div>
+
                     <div class="form-section">
                         <div class="form-group">
                             <label class="form-label">Add a product type</label>
                             <input type="text" class="form-control" id="productType" placeholder="eg - books">
                         </div>
+
                         <div class="form-group">
                             <label class="form-label">Add a category (optional)</label>
                             <input type="text" class="form-control" id="category" placeholder="eg - Academic book">
                         </div>
+
                         <div class="form-group">
                             <label class="form-label">Add a sub-category (optional)</label>
                             <input type="text" class="form-control" id="subCategory" placeholder="eg - medical book">
                         </div>
-                        
                     </div>
+
                     <div class="wizard-navigation">
                         <button class="btn btn-secondary" id="backBtn2">
                             <i class="fas fa-arrow-left"></i> Back
@@ -131,76 +137,94 @@
                         </button>
                     </div>
                 </div>
+
                 <!-- Step 3: Product Details -->
                 <div class="step-content" data-step="3">
                     <div class="content-header">
                         <h1>Let's add your first product</h1>
                         <p>Basic product information and pricing details</p>
                     </div>
+
                     <div class="product-form">
                         <div class="scrollable-area">
                             <div class="section-title">Basic Details</div>
+                            
                             <div class="form-group">
                                 <label class="form-label">Product name</label>
                                 <input type="text" class="form-control" id="productName" placeholder="eg - anatomy book">
                             </div>
+
                             <div class="form-group">
                                 <label class="form-label">Product Description</label>
-                                <textarea class="form-control" id="productDesc" rows="4" placeholder="Description..."></textarea>
+                                <textarea class="form-control" id="productDesc" rows="4" placeholder="Est nisi mollit excepteur laboris tempor fugiat laborum occaecat laborum cillum incididunt ut sit dolor. Consequat veniam ut mollit nos"></textarea>
                             </div>
+
                             <div class="form-group">
                                 <label class="form-label">Add Image(s)</label>
-                                <div class="upload-area" id="uploadArea" tabindex="0" style="outline:none;">
+                                <div class="upload-area" id="uploadArea">
                                     <div class="upload-icon">
                                         <i class="fas fa-plus"></i>
                                     </div>
                                     <span id="uploadText">Click to upload images</span>
-                                    <input type="file" multiple accept="image/*" style="display: none;" id="imageInput">
-                                    <div id="imagePreviewContainer"
-                                        style="margin-top:15px; display:flex; flex-wrap:wrap; gap:10px;"></div>
+                                    <input type="file" multiple accept="image/*" id="imageInput">
                                 </div>
                             </div>
 
                             <div class="checkbox-group">
-                                <div class="checkbox" id="skuCheckbox"></div>
+                                <div class="checkbox" id="skuCheckbox">
+                                    <i class="fas fa-check" style="display: none;"></i>
+                                </div>
                                 <label>✓ this product has an SKU code</label>
                             </div>
                             <div class="form-group" id="skuGroup" style="display: none;">
                                 <input type="text" class="form-control" id="skuCode" placeholder="eg - PROD0001">
                             </div>
+
                             <div class="checkbox-group">
-                                <div class="checkbox" id="hsnCheckbox"></div>
+                                <div class="checkbox" id="hsnCheckbox">
+                                    <i class="fas fa-check" style="display: none;"></i>
+                                </div>
                                 <label>this product has an HSN/SAC code</label>
                             </div>
+
                             <div class="section-title">Pricing Details</div>
+
                             <div class="checkbox-group">
-                                <div class="checkbox" id="gstCheckbox"></div>
+                                <div class="checkbox" id="gstCheckbox">
+                                    <i class="fas fa-check" style="display: none;"></i>
+                                </div>
                                 <label>price inclusive of GST</label>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Net price</label>
                                         <input type="number" class="form-control" id="netPrice" placeholder="eg - 80">
                                     </div>
+
                                     <div class="form-group">
                                         <label class="form-label">List price</label>
                                         <input type="number" class="form-control" id="listPrice" placeholder="eg - 100">
                                     </div>
+
                                     <div class="form-group">
                                         <label class="form-label">Discount percentage</label>
                                         <input type="number" class="form-control" id="discount" placeholder="eg - 20">
                                     </div>
                                 </div>
+
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">GST rate</label>
                                         <input type="number" class="form-control" id="gstRate" placeholder="eg - 18">
                                     </div>
+
                                     <div class="form-group">
                                         <label class="form-label">Shipping charges (if any)</label>
                                         <input type="number" class="form-control" id="shipping" placeholder="eg - 40">
                                     </div>
+
                                     <div class="form-group">
                                         <label class="form-label">Stock level</label>
                                         <input type="number" class="form-control" id="stock" placeholder="eg - 110">
@@ -208,10 +232,17 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="product-preview">
+                            <div class="preview-image-section" id="previewImageSection">
+                                <div class="preview-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <span>Product Image</span>
+                                </div>
+                            </div>
                             <div class="preview-title" id="previewTitle">Product title</div>
                             <div class="preview-desc" id="previewDesc">
-                                Example product description.
+                                Esse minim eiusmod amet et incididunt magna consectetur laborum. Ipsum et cillum do exercitation nostrud nostrud ex.
                             </div>
                             <div class="price-display">
                                 <span class="original-price" id="previewOriginal">RS 100</span>
@@ -219,6 +250,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="wizard-navigation">
                         <button class="btn btn-secondary" id="backBtn3">
                             <i class="fas fa-arrow-left"></i> Back
@@ -231,9 +263,8 @@
             </div>
         </div>
     </div>
-    <!-- Dependencies -->
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 </html>
